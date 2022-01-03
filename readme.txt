@@ -4,12 +4,12 @@ Tags: WooCommerce multivendor marketplace, multivendor marketplace, multi seller
 Donate link: https://www.wcvendors.com/
 Author URI: https://www.wcvendors.com/
 Plugin URI: https://www.wcvendors.com/
-Requires at least: 5.0.0
-Requires PHP: 7.2
-Tested up to: 5.7
+Requires at least: 5.3.0
+Requires PHP: 7.4
+Tested up to: 5.8
 WC requires at least: 4.0.0
-WC tested up to: 5.2
-Stable tag: 2.2.4
+WC tested up to: 5.6.0
+Stable tag: 2.3.2
 License: GPLv2 or later
 
 The original multi-vendor marketplace plugin for WordPress and WooCommerce. Best support available. 
@@ -18,8 +18,8 @@ The original multi-vendor marketplace plugin for WordPress and WooCommerce. Best
 
 = WC Vendors Marketplace plugin for WooCommerce =
 
-- Try our free demo today: [Launch your own demo today](http://www.wcvendors.com/home/demo/?utm_campaign=wporg_details&utm_source=wporg)
-- Learn about WC Vendors Pro: [All the features of WC Vendors Pro](https://www.wcvendors.com/home/features/?utm_campaign=wporg_details&utm_source=wporg)
+- Try our free demo today: [Launch your own demo today](http://www.wcvendors.com/home/demo/?utm_campaign=wporg_details&utm_source=wporg&utm_medium=web)
+- Learn about WC Vendors Pro: [All the features of WC Vendors Pro](https://www.wcvendors.com/home/features/?utm_campaign=wporg_details&utm_source=wporg&utm_medium=web)
 
 = POWERED BY WOOCOMMERCE  =
 
@@ -263,6 +263,27 @@ WC Vendors Marketplace does not work with multisite WordPress. There are no plan
 12. Email notifications for admins, customers and vendors
 
 == Changelog ==
+
+= Version 2.3.2 - 2nd August 2021 = 
+
+* Fixed: Fatal error on activation with PHP7.3 and below #785
+
+= Version 2.3.1 - 22nd July 2021 =
+
+* Fixed: Duplicate seller info in single product page. #780 (#781)
+
+= Version 2.3.0 - 19th July 2021 = 
+
+* Added: New filter to allow custom order visibilities (#754)
+* Added: Ability to delete commission rows (#765)
+* Updated: UI titles to use title case (#768)
+* Updated: Various strings in the codebase (#767)
+* Updated: Disabled cron system if deprecated PayPal settings not active (#769)
+* Updated: Action/Filter names need to be made consistent #716 (#760)
+* Fixed: Orders in order template #757 (#761)
+* Fixed: Vendor sales report table should get hidden as per permission set by admin. #756 (#758)
+* Fixed: Wordpress REST API (Pages asset) & WC Vendors Marketplace (#770)
+* Fixed: Call to a member function get_id() on boolean #745 (#755)
 
 = Version 2.2.4 - 25th March 2021 =
 
