@@ -14,13 +14,6 @@ class CapabilitiesGeneralViewOrdersCest
 		$I->fillField('#woocommerce-product-search-field-0', 'Var Pro 1');//searching for the product added by vendor.
 		$I->pressKey('#woocommerce-product-search-field-0', \Facebook\WebDriver\WebDriverKeys::ENTER);
 		$I->wait(5);
-		$I->scrollTo('#main > div:nth-child(2) > form > select');//This will require 2 products with same name or simply run the script twice to add the product twice.
-		$I->click('Select options');
-		$I->waitForText('Var Pro 1', 300);
-		$I->scrollTo('#product-547 > div.summary.entry-summary > h1');
-		$I->click('#sizes');
-		$I->wait(2);
-		$I->click('#sizes > option:nth-child(2)');
 		$I->click('Add to cart');
 		$I->waitForText('has been added to your cart.', 300);
 		$I->amOnPage('/cart');
@@ -39,7 +32,7 @@ class CapabilitiesGeneralViewOrdersCest
 		$I->scrollTo('#billing_email');
 		$I->fillField('#billing_email', 'automation.customer.one@yopmail.com');
 		$I->wait(5);
-		$I->scrollTo('#payment > ul > li.wc_payment_method.payment_method_paypal > label > img'); //Clicking the WC Vendors Test Gateway for payment.
+		$I->scrollTo('#payment > ul > li.wc_payment_method.payment_method_wcvendors_test_gateway > label'); //Clicking the WC Vendors Test Gateway for payment.
 		$I->executeJS('document.querySelector("#payment > ul > li.wc_payment_method.payment_method_wcvendors_test_gateway > label").click()');
 		$I->waitForText('This is a test gateway — not to be used on live sites for live transactions. Click here to visit WCVendors.com.', 20);//Make sure that the test gateway is set correct.
 		$I->executeJS('document.querySelector("#place_order").click()');
@@ -59,8 +52,6 @@ class CapabilitiesGeneralViewOrdersCest
 		$I->fillField('#password', '#*mr4Xk)R2l)W^XuI^P85jP');
 		$I->click('Log in');
 		$I->click('Vendor Dashboard');
-		$I->waitForElement('#post-14 > div > h2:nth-child(7)');
-		$I->scrollTo('#post-14 > header > h1');
 		$I->click('Show');
 		$I->see('Show Orders');
 		
@@ -72,8 +63,8 @@ class CapabilitiesGeneralViewOrdersCest
 		$I->click('Log in');
 		$I->amOnPage('/wp-admin/admin.php?page=wcv-settings&tab=capabilities');
 		$I->waitForText('Allow vendors to view orders', 300);
-		$I->executeJS('document.querySelector("#mainform > table:nth-child(12) > tbody > tr:nth-child(1) > td > fieldset > label").click()');
-		$I->scrollTo('#mainform > table:nth-child(15) > tbody > tr:nth-child(5) > td > fieldset > label');
+		$I->executeJS('document.querySelector("#wcvendors_capability_orders_enabled").click()');
+		$I->scrollTo('#mainform > p.submit > button');
 		$I->click('Save changes');
 		$I->waitForText('Your settings have been saved.', 300);
 		
@@ -84,8 +75,6 @@ class CapabilitiesGeneralViewOrdersCest
 		$I->fillField('#password', '#*mr4Xk)R2l)W^XuI^P85jP');
 		$I->click('Log in');
 		$I->click('Vendor Dashboard');
-		$I->waitForElement('#post-14 > div > h2:nth-child(7)');
-		$I->scrollTo('#post-14 > header > h1');
 		$I->click('Show');
 		$I->dontSee('Show Orders');
 		
@@ -97,8 +86,8 @@ class CapabilitiesGeneralViewOrdersCest
 		$I->click('Log in');
 		$I->amOnPage('/wp-admin/admin.php?page=wcv-settings&tab=capabilities');
 		$I->waitForText('Allow vendors to view orders', 300);
-		$I->executeJS('document.querySelector("#mainform > table:nth-child(12) > tbody > tr:nth-child(1) > td > fieldset > label").click()');
-		$I->scrollTo('#mainform > table:nth-child(15) > tbody > tr:nth-child(5) > td > fieldset > label');
+		$I->executeJS('document.querySelector("#wcvendors_capability_orders_enabled").click()');
+		$I->scrollTo('#mainform > p.submit > button');
 		$I->click('Save changes');
 		$I->waitForText('Your settings have been saved.', 300);
     }

@@ -37,8 +37,8 @@ class CapabilitiesGeneralEditLiveProductsCest
 		$I->click('Log in');
 		$I->amOnPage('/wp-admin/admin.php?page=wcv-settings&tab=capabilities');
 		$I->waitForText('Allow vendors to edit published (live) products', 300);
-		$I->executeJS('document.querySelector("#mainform > table:nth-child(10) > tbody > tr:nth-child(2) > td > fieldset > label").click()');
-		$I->scrollTo('#mainform > table:nth-child(15) > tbody > tr:nth-child(5) > td > fieldset > label');
+		$I->executeJS('document.querySelector("#wcvendors_capability_products_edit").click()');
+		$I->scrollTo('#mainform > p.submit > button');
 		$I->click('Save changes');
 		$I->amOnPage('/my-account');
 		$I->click('Log out');
@@ -63,8 +63,8 @@ class CapabilitiesGeneralEditLiveProductsCest
 		$I->click('Log in');
 		$I->amOnPage('/wp-admin/admin.php?page=wcv-settings&tab=capabilities');
 		$I->waitForText('Allow vendors to edit published (live) products', 300);
-		$I->executeJS('document.querySelector("#mainform > table:nth-child(10) > tbody > tr:nth-child(2) > td > fieldset > label").click()');
-		$I->scrollTo('#mainform > table:nth-child(15) > tbody > tr:nth-child(5) > td > fieldset > label');
+		$I->executeJS('document.querySelector("#wcvendors_capability_products_edit").click()');
+		$I->scrollTo('#mainform > p.submit > button');
 		$I->click('Save changes');
     }
 }

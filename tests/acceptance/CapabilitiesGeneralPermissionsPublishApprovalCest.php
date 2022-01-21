@@ -30,8 +30,8 @@ class CapabilitiesGeneralPermissionsPublishApprovalCest
 		$I->click('Log in');
 		$I->amOnPage('/wp-admin/admin.php?page=wcv-settings&tab=capabilities');
 		$I->waitForText('Allow vendors to publish products directly to the marketplace without requiring approval.', 300);
-		$I->executeJS('document.querySelector("#mainform > table:nth-child(10) > tbody > tr:nth-child(3) > td > fieldset > label").click()');
-		$I->scrollTo('#mainform > table:nth-child(15) > tbody > tr:nth-child(5) > td > fieldset > label');
+		$I->executeJS('document.querySelector("#wcvendors_capability_products_live").click()');
+		$I->scrollTo('#mainform > p.submit > button');
 		$I->click('Save changes');
 		$I->waitForText('Your settings have been saved.', 300);
 		$I->amOnPage('/my-account');
@@ -46,7 +46,6 @@ class CapabilitiesGeneralPermissionsPublishApprovalCest
 		$I->fillField('#title', 'Approval will be required');
 		$I->doubleClick('#publish');
 		$I->waitForText('Product submitted. Preview product', 300);
-		
 		$I->amOnPage('/my-account');
 		$I->click('Log out');
 		$I->fillField('#username', 'admin');
@@ -54,8 +53,8 @@ class CapabilitiesGeneralPermissionsPublishApprovalCest
 		$I->click('Log in');
 		$I->amOnPage('/wp-admin/admin.php?page=wcv-settings&tab=capabilities');
 		$I->waitForText('Allow vendors to publish products directly to the marketplace without requiring approval.', 300);
-		$I->executeJS('document.querySelector("#mainform > table:nth-child(10) > tbody > tr:nth-child(3) > td > fieldset > label").click()');
-		$I->scrollTo('#mainform > table:nth-child(15) > tbody > tr:nth-child(5) > td > fieldset > label');
+		$I->executeJS('document.querySelector("#wcvendors_capability_products_live").click()');
+		$I->scrollTo('#mainform > p.submit > button');
 		$I->click('Save changes');
 		$I->waitForText('Your settings have been saved.', 300);
     }

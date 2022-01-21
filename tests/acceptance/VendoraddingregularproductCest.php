@@ -7,7 +7,7 @@ class VendoraddingregularproductCest
         $I->amOnPage('/');
 		$I->click('My account');
 		$I->fillField('#username', 'vendor1');
-		$I->fillField('#password', '#*mr4Xk)R2l)W^XuI^P*85jP');
+		$I->fillField('#password', '#*mr4Xk)R2l)W^XuI^P85jP');
 		$I->click('#customer_login > div.u-column1.col-1 > form > p:nth-child(3) > button');
     }
 
@@ -56,7 +56,7 @@ class VendoraddingregularproductCest
 		$I->scrollTo('#billing_email');
 		$I->fillField('#billing_email', 'automation.customer.one@yopmail.com');
 		$I->wait(5);
-		$I->scrollTo('#payment > ul > li.wc_payment_method.payment_method_paypal > label > img'); //Clicking the WC Vendors Test Gateway for payment.
+		$I->scrollTo('#payment > ul > li.wc_payment_method.payment_method_wcvendors_test_gateway > label'); //Clicking the WC Vendors Test Gateway for payment.
 		$I->executeJS('document.querySelector("#payment > ul > li.wc_payment_method.payment_method_wcvendors_test_gateway > label").click()');
 		$I->waitForText('This is a test gateway — not to be used on live sites for live transactions. Click here to visit WCVendors.com.', 20);//Make sure that the test gateway is set correct.
 		$I->executeJS('document.querySelector("#place_order").click()');

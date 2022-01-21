@@ -29,8 +29,7 @@ class CapabilitiesOrdersCustomerShippingAddressEmailandPhoneCest
 		$I->fillField('#password', '#*mr4Xk)R2l)W^XuI^P85jP');
 		$I->click('Log in');
 		$I->click('Vendor Dashboard');
-		$I->scrollTo('#post-14 > div > h2:nth-child(3)');
-		$I->click('Show Orders');
+        $I->click('Show Orders');
 		$I->dontSee('Email address');
 		$I->dontSee('Address');
 		$I->dontSee('City');

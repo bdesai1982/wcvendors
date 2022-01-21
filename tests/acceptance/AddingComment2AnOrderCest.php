@@ -14,13 +14,6 @@ class AddingComment2AnOrderCest
 		$I->fillField('#woocommerce-product-search-field-0', 'Var Pro 1');//searching for the product added by vendor.
 		$I->pressKey('#woocommerce-product-search-field-0', \Facebook\WebDriver\WebDriverKeys::ENTER);
 		$I->wait(5);
-		$I->scrollTo('#main > div:nth-child(2) > form > select');//This will require 2 products with same name or simply run the script twice to add the product twice.
-		$I->click('Select options');
-		$I->waitForText('Var Pro 1', 300);
-		$I->scrollTo('#product-547 > div.summary.entry-summary > h1');
-		$I->click('#sizes');
-		$I->wait(2);
-		$I->click('#sizes > option:nth-child(2)');
 		$I->click('Add to cart');
 		$I->waitForText('has been added to your cart.', 300);
 		$I->amOnPage('/cart');
@@ -39,7 +32,7 @@ class AddingComment2AnOrderCest
 		$I->scrollTo('#billing_email');
 		$I->fillField('#billing_email', 'automation.customer.one@yopmail.com');
 		$I->wait(5);
-		$I->scrollTo('#payment > ul > li.wc_payment_method.payment_method_paypal > label > img'); //Clicking the WC Vendors Test Gateway for payment.
+		$I->scrollTo('#payment > ul > li.wc_payment_method.payment_method_wcvendors_test_gateway > label'); //Clicking the WC Vendors Test Gateway for payment.
 		$I->executeJS('document.querySelector("#payment > ul > li.wc_payment_method.payment_method_wcvendors_test_gateway > label").click()');
 		$I->waitForText('This is a test gateway — not to be used on live sites for live transactions. Click here to visit WCVendors.com.', 20);//Make sure that the test gateway is set correct.
 		$I->executeJS('document.querySelector("#place_order").click()');
@@ -62,7 +55,6 @@ class AddingComment2AnOrderCest
 		$I->click('Show');
 		$I->waitForText('Show Orders', 30);
 		$I->click('Show Orders');
-		$I->scrollTo('#post-17 > div > h2');
 		$I->wait(2);
 		$I->click('Comments');
 		$I->fillField('//*[@name="comment_text"]', 'Sample automated comment content. This text is added via automation. Checking for automated content addition as comment.');

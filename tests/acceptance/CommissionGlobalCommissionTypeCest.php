@@ -38,7 +38,6 @@ class CommissionGlobalCommissionTypeCest
 		$I->click('Log in');
 		$I->fillField('#woocommerce-product-search-field-0', 'Regular product with 100 unit amount');//searching for the product added by vendor.
 		$I->pressKey('#woocommerce-product-search-field-0', \Facebook\WebDriver\WebDriverKeys::ENTER);
-		$I->wait(5);
 		$I->scrollTo('#main > div:nth-child(2) > form > select');
 		$I->click('Add to cart');
 		$I->wait(10);
@@ -58,8 +57,8 @@ class CommissionGlobalCommissionTypeCest
 		$I->scrollTo('#billing_email');
 		$I->fillField('#billing_email', 'automation.customer.one@yopmail.com');
 		$I->wait(5);
-		$I->scrollTo('#payment > ul > li.wc_payment_method.payment_method_paypal > label > img'); //Clicking the WC Vendors Test Gateway for payment.
-		$I->executeJS('document.querySelector("#payment > ul > li.wc_payment_method.payment_method_wcvendors_test_gateway > label").click()');
+		$I->scrollTo('#payment > ul > li.wc_payment_method.payment_method_wcvendors_test_gateway > label'); //Clicking the WC Vendors Test Gateway for payment.
+    	$I->executeJS('document.querySelector("#payment > ul > li.wc_payment_method.payment_method_wcvendors_test_gateway > label").click()');
 		$I->waitForText('This is a test gateway — not to be used on live sites for live transactions. Click here to visit WCVendors.com.', 20);//Make sure that the test gateway is set correct.
 		$I->executeJS('document.querySelector("#place_order").click()');
 		$I->waitForText('Order received', 300);

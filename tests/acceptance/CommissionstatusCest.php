@@ -38,7 +38,7 @@ class CommissionstatusCest
 		$I->scrollTo('#billing_email');
 		$I->fillField('#billing_email', 'automation.customer.one@yopmail.com');
 		$I->wait(5);
-		$I->scrollTo('#payment > ul > li.wc_payment_method.payment_method_paypal > label > img'); //Clicking the WC Vendors Test Gateway for payment.
+		$I->scrollTo('#payment > ul > li.wc_payment_method.payment_method_wcvendors_test_gateway > label'); //Clicking the WC Vendors Test Gateway for payment.
 		$I->executeJS('document.querySelector("#payment > ul > li.wc_payment_method.payment_method_wcvendors_test_gateway > label").click()');
 		$I->waitForText('This is a test gateway — not to be used on live sites for live transactions. Click here to visit WCVendors.com.', 20);//Make sure that the test gateway is set correct.
 		$I->executeJS('document.querySelector("#place_order").click()');
@@ -71,7 +71,7 @@ class CommissionstatusCest
 		$I->scrollTo('#billing_email');
 		$I->fillField('#billing_email', 'automation.customer.one@yopmail.com');
 		$I->wait(5);
-		//$I->scrollTo('#order_review > table > tfoot > tr.woocommerce-shipping-totals.shipping > th');
+		$I->scrollTo('#payment > ul > li.wc_payment_method.payment_method_bacs > label');
 		$I->executeJS('document.querySelector("#payment > ul > li.wc_payment_method.payment_method_bacs > label").click()');//Direct bank transfer
 		$I->waitForText('Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.', 20);//Make sure that the test gateway is set correct.
 		$I->executeJS('document.querySelector("#place_order").click()');
@@ -143,7 +143,6 @@ class CommissionstatusCest
 		$I->scrollTo('#post-8 > div > div > div > ul > li.woocommerce-order-overview__email.email');
 		$I->see('automation.customer.one@yopmail.com');
 		$I->amOnPage('/my-account');
-		$I->waitForText('Hello Automation Customer', 300);
 		$I->click('Log out');
 		$I->fillField('#username', 'admin');
 		$I->fillField('#password', '123456');

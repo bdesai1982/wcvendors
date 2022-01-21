@@ -23,8 +23,8 @@ class CapabilitiesSubmitProductsCest
 		$I->fillField('#password', '123456');
 		$I->click('Log in');
 		$I->amOnPage('/wp-admin/admin.php?page=wcv-settings&tab=capabilities');
-		$I->click('#mainform > table:nth-child(10) > tbody > tr:nth-child(1) > td > fieldset > label');
-		$I->scrollTo('#mainform > table:nth-child(15) > tbody > tr:nth-child(5) > td > fieldset > label');
+		$I->click('#wcvendors_capability_products_enabled');
+		$I->scrollTo('#mainform > p.submit > button');
 		$I->click('Save changes');
 		$I->amOnPage('/my-account');
 		$I->click('Log out');
@@ -39,8 +39,8 @@ class CapabilitiesSubmitProductsCest
 		$I->fillField('#password', '123456');
 		$I->click('Log in');
 		$I->amOnPage('/wp-admin/admin.php?page=wcv-settings&tab=capabilities');
-		$I->click('#mainform > table:nth-child(10) > tbody > tr:nth-child(1) > td > fieldset > label');
-		$I->scrollTo('#mainform > table:nth-child(15) > tbody > tr:nth-child(5) > td > fieldset > label');
+		$I->click('#wcvendors_capability_products_enabled');
+		$I->scrollTo('#mainform > p.submit > button');
 		$I->click('Save changes');
     }
 }
